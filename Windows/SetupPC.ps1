@@ -124,8 +124,6 @@ Write-Host "    VLC" -ForegroundColor Magenta
 choco install vlc -y
 Write-Host "    Cmder Mini" -ForegroundColor Magenta
 choco install cmdermini -y 
-Write-Host "    CCleaner" -ForegroundColor Magenta
-choco install CCleaner -y
 Write-Host "    Paint.net" -ForegroundColor Magenta
 choco install paint.net -y
 Write-Host "    WinMerge" -ForegroundColor Magenta
@@ -173,9 +171,7 @@ $ApplicationList = "Microsoft.BingFinance",
 "Microsoft.WindowsFeedbackHub",
 "Microsoft.OneConnect",
 "Microsoft.SkypeApp",
-"Microsoft.WindowsAlarms",
 "Microsoft.WindowsCamera",
-"Microsoft.WindowsMaps",
 "Microsoft.WindowsPhone",
 "Microsoft.ZuneVideo",
 "Microsoft.MinecraftUWP",
