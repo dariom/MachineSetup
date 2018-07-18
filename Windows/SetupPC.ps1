@@ -114,8 +114,6 @@ Write-Host "    Node.js" -ForegroundColor Magenta
 choco install nodejs.install -y
 Write-Host "    Google Chrome" -ForegroundColor Magenta
 choco install googlechrome -y
-Write-Host "    Skype" -ForegroundColor Magenta
-choco install skype -y
 Write-Host "    Sysinternals" -ForegroundColor Magenta
 choco install sysinternals -y
 Write-Host "    Notepad++" -ForegroundColor Magenta
@@ -130,12 +128,8 @@ Write-Host "    CCleaner" -ForegroundColor Magenta
 choco install CCleaner -y
 Write-Host "    Paint.net" -ForegroundColor Magenta
 choco install paint.net -y
-Write-Host "    Calibre" -ForegroundColor Magenta
-choco install calibre -y
-Write-Host "    DiffMerge" -ForegroundColor Magenta
-choco install diffmerge  -y
-Write-Host "    WhatsApp" -ForegroundColor Magenta
-choco install whatsapp -y
+Write-Host "    WinMerge" -ForegroundColor Magenta
+choco install winmerge  -y
 Write-Host "    Microsoft Teams" -ForegroundColor Magenta
 choco install microsoft-teams -y
 Write-Host "    Slack" -ForegroundColor Magenta
@@ -148,11 +142,14 @@ Write-Host "    ReSharper" -ForegroundColor Magenta
 choco install resharper -y
 Write-Host "    DotPeek" -ForegroundColor Magenta
 choco install dotpeek -y
-Write-Host "    Tweeten (Manual Installation)" -ForegroundColor Magenta
-$LatestTweetenVersion = ((Invoke-WebRequest https://github.com/MehediH/Tweeten/releases/latest -UseBasicParsing -Headers @{"Accept" = "application/json"}).Content | ConvertFrom-Json).tag_name
-$TweetenDownloadLocation = Join-Path -Path $env:temp -ChildPath "TweetenSetup.exe"
-Invoke-WebRequest -Uri "https://github.com/MehediH/Tweeten/releases/download/$LatestTweetenVersion/TweetenSetup.exe" -OutFile $TweetenDownloadLocation | Out-Null
-Start-Process -FilePath $TweetenDownloadLocation
+Write-Host "    Fiddler" -ForegroundColor Magenta
+choco install fiddler -y
+Write-Host "    FileZilla" -ForegroundColor Magenta
+choco install filezilla -y
+Write-Host "    MarkdownPad2" -ForegroundColor Magenta
+choco install markdownpad2 -y
+Write-Host "    TeamViewer" -ForegroundColor Magenta
+choco install teamviewer -y
 
 Update-SessionEnvironment
 
