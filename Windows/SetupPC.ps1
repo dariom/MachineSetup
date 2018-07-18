@@ -260,13 +260,6 @@ Write-Host "Setting Windows Preferences" -ForegroundColor Green
 New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT | Out-Null
 New-PSDrive -Name HKU -PSProvider Registry -Root HKEY_USERS | Out-Null
 
-# Disable Outlook Notifications
-New-Item "HKCU:\Software\Microsoft\Office\$OfficeVersion.0\Outlook\Preferences" -ErrorAction SilentlyContinue | Out-Null
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\$OfficeVersion.0\Outlook\Preferences" -Name "ChangePointer" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\$OfficeVersion.0\Outlook\Preferences" -Name "NewmailDesktopAlerts" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\$OfficeVersion.0\Outlook\Preferences" -Name "PlaySound" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\$OfficeVersion.0\Outlook\Preferences" -Name "ShowEnvelope" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-
 # Show Hidden Files
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
@@ -282,28 +275,16 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Cloud Content"
 # Enable Do Not Track on Edge
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" -Name "DoNotTrack" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
-# Disable Ads in Windows Explorer
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSyncProviderNotifications"  -Type DWord -Value 0 -ErrorAction SilentlyContinue
-
 # Show Cortana Circle
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
 # Enable Lock Screen Spotlight
 Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\CloudContent" -Name "ConfigureWindowsSpotlight" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
-# Hide Task View Button
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-
 # Disable Sticky Keys Prompt
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" "506" -ErrorAction SilentlyContinue
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\Keyboard Response" -Name "Flags" "122" -ErrorAction SilentlyContinue
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\ToggleKeys" -Name "Flags" "58" -ErrorAction SilentlyContinue
-
-# Show All Icons in Tray
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "EnableAutoTray" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-
-# Windows Explorer Default to My Computer
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
 # Enable P2P Downloads over LAN only
 New-Item "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -ErrorAction SilentlyContinue | Out-Null
@@ -321,66 +302,9 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Use Light Theme By Default
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
-# Disable Windows Ink Workspace
-New-Item "HKLM:\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace" -ErrorAction SilentlyContinue | Out-Null
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace" -Name "AllowWindowsInkWorkspace" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-
-# Disable App Suggestions & Tips
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "ContentDeliveryAllowed" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "OemPreInstalledAppsEnabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEnabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEverEnabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsEnabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389Enabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SystemPaneSuggestionsEnabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388Enabled" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-
 # Enable Driver Updates through Windows Update
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" -Name "SearchOrderConfig" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -ErrorAction SilentlyContinue
-    
-# Disable Auto Play
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" -Name "DisableAutoplay" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-
-#Show Details when Copying Files
-New-Item "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -ErrorAction SilentlyContinue | Out-Null
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-
-# Use Large Taskbar Icons
-Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -ErrorAction SilentlyContinue
-
-# Hiding Recent Shortcuts
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowRecent" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowFrequent" -Type DWord -Value 0 -ErrorAction SilentlyContinue
-
-# Hiding Desktop Icon from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}" -Recurse -ErrorAction SilentlyContinue
-
-# Hiding Downloads Icon from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{088e3905-0323-4b02-9826-5d99428e115f}" -Recurse -ErrorAction SilentlyContinue
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}" -Recurse -ErrorAction SilentlyContinue
-
-# Hiding Music Icon from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}" -Recurse -ErrorAction SilentlyContinue
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}" -Recurse -ErrorAction SilentlyContinue
-
-# Hiding Pictures Icon from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}" -Recurse -ErrorAction SilentlyContinue
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}" -Recurse -ErrorAction SilentlyContinue
-
-# Hiding Videos Icon from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}" -Recurse -ErrorAction SilentlyContinue
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}" -Recurse -ErrorAction SilentlyContinue
-
-# Hiding 3D Objects Icon from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" -Recurse -ErrorAction SilentlyContinue
-
-# Disabling creation of Thumbs.db
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbnailCache" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbsDBOnNetworkFolders" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-
-# Hiding Titles in Taskbar
-Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarGlomLevel" -ErrorAction SilentlyContinue
 
 # Turn off Checkboxes in Windows Explorer
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "AutoCheckSelect" -Type DWord -Value 0 -ErrorAction SilentlyContinue 
@@ -400,29 +324,14 @@ If (!([System.Windows.Forms.Control]::IsKeyLocked('NumLock'))) {
 New-Item "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -ErrorAction SilentlyContinue | Out-Null
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "NoUseStoreOpenWith" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
-# Enabling Driver Updates through Windows Update
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" -Name "SearchOrderConfig" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -ErrorAction SilentlyContinue
-
 # Enable Remote Desktop
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1 -ErrorAction SilentlyContinue
 Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name "fDenyTSConnections" -Value 0 -ErrorAction SilentlyContinue
 
-# Allow Trusted Apps (Needed for Linux Subsystem)
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowDevelopmentWithoutDevLicense" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowAllTrustedApps" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-
 # Remove "Include in Library" From Context Menu   
 Remove-Item "HKLM:\SOFTWARE\Classes\Folder\ShellEx\ContextMenuHandlers\Library Location" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\Folder\ShellEx\ContextMenuHandlers\Library Location" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "Pin to Quick Access" From Context Menu   
-Remove-Item "HKLM:\SOFTWARE\Classes\Folder\shell\pintohome" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Folder\shell\pintohome" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "Quick Access" from File Explorer
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "HubMode" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
 # Remove "New Contact" From Context Menu   
 Remove-Item "HKCR:\.contact\ShellNew" -Recurse -ErrorAction SilentlyContinue
@@ -445,12 +354,6 @@ Remove-Item "HKCR:\.bmp\ShellNew" -Recurse -ErrorAction SilentlyContinue
 # Remove "Modern Share" From Context Menu   
 Remove-Item -LiteralPath "HKCR:\*\shellex\ContextMenuHandlers\ModernSharing" -Recurse -ErrorAction SilentlyContinue
 
-# Remove "New Word Document" From Context Menu   
-Remove-Item "HKCR:\.docx\Word.Document.12\ShellNew" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "New Excel Document" From Context Menu   
-Remove-Item "HKCR:\.xlsx\Excel.Sheet.12\ShellNew" -Recurse -ErrorAction SilentlyContinue
-
 # Remove "New Publisher Document" From Context Menu   
 Remove-Item "HKCR:\.pub\Publisher.Document.16\ShellNew" -Recurse -ErrorAction SilentlyContinue
 
@@ -458,34 +361,11 @@ Remove-Item "HKCR:\.pub\Publisher.Document.16\ShellNew" -Recurse -ErrorAction Si
 Remove-Item "HKCR:\.accdb\Access.Application.16\ShellNew" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\.mdb\ShellNew" -Recurse -ErrorAction SilentlyContinue
 
-# Remove "New Powerpoint Document" From Context Menu   
-Remove-Item "HKCR:\.pptx\PowerPoint.Show.12\ShellNew" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "New Shortcut" From Context Menu   
-Remove-Item "HKCR:\.lnk\ShellNew" -Recurse -ErrorAction SilentlyContinue
-        
-# Remove "Open in Visual Studio" From Context Menu   
-Remove-Item "HKCR:\Directory\Background\shell\AnyCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Directory\shell\AnyCode" -Recurse -ErrorAction SilentlyContinue
-
 # Remove "Scan with Windows Defender" From Context Menu   
 Remove-Item -LiteralPath "HKCR:\*\shellex\ContextMenuHandlers\EPP" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\Directory\shellex\ContextMenuHandlers\EPP" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\Drive\shellex\ContextMenuHandlers\EPP" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "Set as Backgroud Wallpaper" From Context Menu   
-Remove-Item "HKCR:\SystemFileAssociations\.bmp\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.dib\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.gif\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jfif\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpe\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpeg\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpg\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.png\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.tif\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.tiff\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.wdp\Shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
 
 # Remove "Shared Folder Synchronization" From Context Menu   
 Remove-Item "HKCR:\CLSID\{6C467336-8281-4E60-8204-430CED96822D}" -Recurse -ErrorAction SilentlyContinue
@@ -512,12 +392,6 @@ Remove-Item "HKCR:\Directory\shell\git_shell" -Recurse -ErrorAction SilentlyCont
 Remove-Item "HKCR:\Directory\Background\shell\git_gui" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\Directory\Background\shell\git_shell" -Recurse -ErrorAction SilentlyContinue
 
-# Remove "Open with VS Code" From Context Menu  
-Remove-Item "HKCR:\Directory\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Directory\Background\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item -LiteralPath "HKCR:\*\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Drive\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-
 # Remove "Windows Media Player" From Context Menu  
 Remove-Item "HKCR:\Directory\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\Directory\Background\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
@@ -539,19 +413,6 @@ Remove-Item "HKCR:\SystemFileAssociations\.stl\shell\3D Edit" -Recurse -ErrorAct
 Remove-Item "HKCR:\SystemFileAssociations\.tif\shell\3D Edit" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\SystemFileAssociations\.tiff\shell\3D Edit" -Recurse -ErrorAction SilentlyContinue
 
-# Remove "Set as Wallpaper" From Context Menu  
-Remove-Item "HKCR:\SystemFileAssociations\.bmp\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.dib\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.gif\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jfif\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpe\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpeg\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpg\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.png\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.tif\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.tiff\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.wdp\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-
 # Remove "3D Print" From Context Menu
 Remove-Item "HKCR:\SystemFileAssociations\.3ds\shell\3D Print" -Recurse -ErrorAction SilentlyContinue	
 Remove-Item "HKCR:\SystemFileAssociations\.3mf\shell\3D Print" -Recurse -ErrorAction SilentlyContinue
@@ -561,37 +422,6 @@ Remove-Item "HKCR:\SystemFileAssociations\.obj\shell\3D Print" -Recurse -ErrorAc
 Remove-Item "HKCR:\SystemFileAssociations\.ply\shell\3D Print" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\SystemFileAssociations\.stl\shell\3D Print" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\SystemFileAssociations\.wrl\shell\3D Print" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "DiffMerge" From Context Menu
-Remove-Item -LiteralPath "HKCR:\*\shellex\ContextMenuHandlers\SourceGearDiffMergeShellExtension32" -Recurse -ErrorAction SilentlyContinue 
-Remove-Item -LiteralPath "HKCR:\*\shellex\ContextMenuHandlers\SourceGearDiffMergeShellExtension64" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Directory\shellex\ContextMenuHandlers\SourceGearDiffMergeShellExtension32" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Directory\shellex\ContextMenuHandlers\SourceGearDiffMergeShellExtension64" -Recurse -ErrorAction SilentlyContinue
-        
-# Remove "Send To" Links
-Remove-Item "${env:APPDATA}\Microsoft\Windows\SendTo\Bluetooth File Transfer.LNK" -ErrorAction SilentlyContinue
-Remove-Item "${env:APPDATA}\Microsoft\Windows\SendTo\Desktop (create shortcut).DeskLink" -ErrorAction SilentlyContinue
-Remove-Item "${env:APPDATA}\Microsoft\Windows\SendTo\Documents.mydocs" -ErrorAction SilentlyContinue
-Remove-Item "${env:APPDATA}\Microsoft\Windows\SendTo\Mail Recipient.MAPIMail" -ErrorAction SilentlyContinue
-Remove-Item "${env:APPDATA}\Microsoft\Windows\SendTo\Fax recipient.lnk" -ErrorAction SilentlyContinue
-
-Remove-PSDrive -Name HKCR | Out-Null
-Remove-PSDrive -Name HKU | Out-Null
-
-#####################################################################################################################################################################################################
-#                                                  ADD/REMOVE WINDOWS FEATURES
-#####################################################################################################################################################################################################
-Write-Host "Adding/Removing Windows Features" -ForegroundColor Green
-
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "MediaPlayback" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "FaxServicesClientPackage" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "Xps-Foundation-Xps-Viewer" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "Printing-XPSServices-Features" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "Printing-Foundation-InternetPrinting-Client" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Disable-WindowsOptionalFeature -Online -FeatureName "Internet-Explorer-Optional-amd64" -NoRestart -ErrorAction SilentlyContinue | Out-Null
 
 #####################################################################################################################################################################################################
 #                                                  KEYBOARD PREFERENCES
@@ -613,12 +443,12 @@ Remove-Item "$env:UserProfile\Desktop\*.lnk"
 
 Write-Host "    Creating Folders" -ForegroundColor Magenta
 
-If (-Not (Test-Path "C:\Personal")) {
-    New-Item "C:\Personal" -ItemType Directory | Out-Null
+If (-Not (Test-Path "C:\Temp")) {
+    New-Item "C:\Temp" -ItemType Directory | Out-Null
 }
 
-If (-Not (Test-Path "C:\Source Code")) {
-    New-Item "C:\Source Code" -ItemType Directory | Out-Null
+If (-Not (Test-Path "C:\Code")) {
+    New-Item "C:\Code" -ItemType Directory | Out-Null
 }
 
 #####################################################################################################################################################################################################
@@ -668,20 +498,6 @@ If ([Environment]::OSVersion.Version.Major -lt 10) {
 }
 
 Stop-Process -ProcessName explorer
-
-#####################################################################################################################################################################################################
-#                                                  CONFIGURING STARTUP APPLICATIONS
-#####################################################################################################################################################################################################
-Write-Host "Configuring Startup Applications" -ForegroundColor Green
-
-Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Steam" -ErrorAction SilentlyContinue
-
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Outlook" -Value "${env:ProgramFiles(x86)}\Microsoft Office\root\Office$OfficeVersion\Outlook.exe" -Force -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Chrome" -Value "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" -Force -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "WhatsApp" -Value "${env:UserProfile}\AppData\Local\WhatsApp\WhatsApp.exe" -Force -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Cmder" -Value "${env:ChocolateyToolsLocation}\cmdermini\cmder.exe" -Force -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Notepad++" -Value "${env:ProgramFiles}\Notepad++\Notepad++.exe" -Force -ErrorAction SilentlyContinue
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Explorer" -Value "$($env:windir)\explorer.exe" -Force -ErrorAction SilentlyContinue
 
 #####################################################################################################################################################################################################
 #                                                   UPDATE WINDOWS
