@@ -148,6 +148,8 @@ Write-Host "    MarkdownPad2" -ForegroundColor Magenta
 choco install markdownpad2 -y
 Write-Host "    TeamViewer" -ForegroundColor Magenta
 choco install teamviewer -y
+Write-Host "    1Password" -ForegroundColor Magenta
+choco install 1password -y
 
 Update-SessionEnvironment
 
@@ -241,16 +243,6 @@ ForEach ($CurrentAppName in $ApplicationList) {
     }
 }
 
-
-#####################################################################################################################################################################################################
-#                                                   DOWNLOAD REMOTE FILES
-#####################################################################################################################################################################################################
-Write-Host "Downloading Remote Files" -ForegroundColor Green
-
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\.gitconfig") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/Git/.gitconfig')) -Force | Out-Null
-New-Item (Join-Path -Path $env:ChocolateyToolsLocation -ChildPath "\cmdermini\vendor\conemu-maximus5\ConEmu.xml") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/Cmder/ConEmu.xml')) -Force | Out-Null
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Roaming\Code\User\keybindings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/VSCode/keybindings.json')) -Force | Out-Null
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Roaming\Code\User\settings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/VSCode/settings.json')) -Force | Out-Null
 
 #####################################################################################################################################################################################################
 #                                                   WINDOWS PREFERENCES
