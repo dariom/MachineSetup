@@ -1,32 +1,26 @@
-#Please ensure that sgdm.exe is in the Environment Path
+#Please ensure that WinMergeU.exe is in the Environment Path
 [merge]
-    tool = diffmerge
+    tool = winmerge
 [mergetool]
     prompt = false
     keepBackup = false
 	
 [diff]
-    tool = diffmerge
+    tool = winmerge
 [difftool]
     prompt = false
 	
-[mergetool "diffmerge"]
+[mergetool "winmerge"]
     trustExitCode = true
-    cmd = sgdm --merge --result=$MERGED $REMOTE $BASE $LOCAL --title1=Mine --title2=Merged --title3=Theirs
-
-[mergetool "beyondcompare"]
-    trustExitCode = true
-	cmd = BCompare $LOCAL $REMOTE $BASE $MERGED
+    cmd = WinMergeU.exe -e -u -dl \"Base\" -dr \"Mine\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	
-[difftool "diffmerge"]
-    cmd = sgdm \"$LOCAL\" \"$REMOTE\"
-
-[difftool "beyondcompare"]
-    cmd = BCompare \"$LOCAL\" \"$REMOTE\"	
+[difftool "winmerge"]
+    cmd = WinMergeU.exe \"$LOCAL\" \"$REMOTE\"
 
 
 [user]
-	name = Mauro Da Silva	
+	name = Dario Mratovich
+	email = dario.mratovich@readify.net
 	
 [alias]
 	# Obtained from http://haacked.com/archive/2014/07/28/github-flow-aliases/
