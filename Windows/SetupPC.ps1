@@ -122,8 +122,8 @@ Write-Host "    7-Zip" -ForegroundColor Magenta
 choco install 7zip.install -y
 Write-Host "    VLC" -ForegroundColor Magenta
 choco install vlc -y
-Write-Host "    Cmder Mini" -ForegroundColor Magenta
-choco install cmdermini -y 
+Write-Host "    Cmder" -ForegroundColor Magenta
+choco install cmder -y 
 Write-Host "    Paint.net" -ForegroundColor Magenta
 choco install paint.net -y
 Write-Host "    WinMerge" -ForegroundColor Magenta
