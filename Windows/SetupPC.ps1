@@ -150,6 +150,8 @@ Write-Host "    TeamViewer" -ForegroundColor Magenta
 choco install teamviewer -y
 Write-Host "    1Password" -ForegroundColor Magenta
 choco install 1password -y
+Write-Host "    LinqPad" -ForegroundColor Magenta
+choco install linqpad -y
 
 Update-SessionEnvironment
 
