@@ -96,6 +96,8 @@ Write-Host "    Installing TSLint Extension" -ForegroundColor Magenta
 code --install-extension eg2.tslint | Out-Null
 Write-Host "    Installing Azure Resource Manager Tools" -ForegroundColor Magenta
 code --install-extension msazurermtools.azurerm-vscode-tools | Out-Null
+Write-Host "    Installing jebbs.plantuml" -ForegroundColor Magenta
+code --install-extension jebbs.plantuml | Out-Null
 
 #Office 365
 Write-Host "Installing Office 365" -ForegroundColor Green
