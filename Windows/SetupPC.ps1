@@ -254,6 +254,7 @@ ForEach ($CurrentAppName in $ApplicationList) {
 Write-Host "Downloading Remote Files" -ForegroundColor Green
 
 New-Item (Join-Path -Path $env:UserProfile -ChildPath "\.gitconfig") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/Git/.gitconfig')) -Force | Out-Null
+New-Item (Join-Path -Path $env:ChocolateyToolsLocation -ChildPath "\cmder\vendor\conemu-maximus5\ConEmu.xml") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/Cmder/ConEmu.xml')) -Force | Out-Null
 
 
 #####################################################################################################################################################################################################
