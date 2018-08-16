@@ -48,8 +48,8 @@
 
 	
 	# Obtained from http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	lgd = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 	grep = grep -Ii
 	find = "!git ls-files | grep -i"
 	lt = describe --tags --abbrev=0
