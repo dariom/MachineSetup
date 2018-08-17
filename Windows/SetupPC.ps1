@@ -256,7 +256,8 @@ Write-Host "Downloading Remote Files" -ForegroundColor Green
 New-Item (Join-Path -Path $env:UserProfile -ChildPath "\.gitconfig") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/Git/.gitconfig')) -Force | Out-Null
 New-Item (Join-Path -Path $env:ChocolateyToolsLocation -ChildPath "\cmder\vendor\conemu-maximus5\ConEmu.xml") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/Cmder/ConEmu.xml')) -Force | Out-Null
 New-Item (Join-Path -Path $env:UserProfile -ChildPath "\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/PowerShell/Microsoft.PowerShell_profile.ps1')) -Force | Out-Null
-
+# Override MarkdownPad CSS for GitHub-flavoured Markdown and high DPI displays
+New-Item (Join-Path -Path $env:AppData -ChildPath "\MarkdownPad 2\styles\markdownpad-github.css") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/markdownpad-github/master/markdownpad-github.css')) -Force | Out-Null
 
 #####################################################################################################################################################################################################
 #                                                   WINDOWS PREFERENCES
