@@ -154,6 +154,8 @@ Write-Host "    1Password" -ForegroundColor Magenta
 choco install 1password -y
 Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
+Write-Host "    Power BI Desktop" -ForegroundColor Magenta
+choco install powerbi -y
 
 Update-SessionEnvironment
 
