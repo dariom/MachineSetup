@@ -132,8 +132,6 @@ Write-Host "    WinMerge" -ForegroundColor Magenta
 choco install winmerge  -y
 Write-Host "    Microsoft Teams" -ForegroundColor Magenta
 choco install microsoft-teams -y
-Write-Host "    Slack" -ForegroundColor Magenta
-choco install slack -y
 Write-Host "    Remote Desktop Manager" -ForegroundColor Magenta
 choco install rdcman -y
 Write-Host "    Steam" -ForegroundColor Magenta
