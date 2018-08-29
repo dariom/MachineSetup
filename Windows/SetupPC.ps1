@@ -99,10 +99,6 @@ code --install-extension msazurermtools.azurerm-vscode-tools | Out-Null
 Write-Host "    Installing jebbs.plantuml" -ForegroundColor Magenta
 code --install-extension jebbs.plantuml | Out-Null
 
-#Office 365
-Write-Host "Installing Office 365" -ForegroundColor Green
-choco install office365proplus -y
-
 #Various Apps
 Write-Host "Installing Various Apps" -ForegroundColor Green
 
