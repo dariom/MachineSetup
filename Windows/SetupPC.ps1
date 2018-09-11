@@ -148,6 +148,10 @@ Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
 Write-Host "    Power BI Desktop" -ForegroundColor Magenta
 choco install powerbi -y
+Write-Host "    Snagit" -ForegroundColor Magenta
+choco install snagit -y
+Write-Host "    Camtasia" -ForegroundColor Magenta
+choco install camtasia -y
 
 Update-SessionEnvironment
 
