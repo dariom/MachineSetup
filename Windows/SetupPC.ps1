@@ -152,6 +152,8 @@ Write-Host "    Snagit" -ForegroundColor Magenta
 choco install snagit -y
 Write-Host "    Camtasia" -ForegroundColor Magenta
 choco install camtasia -y
+Write-Host "    Tail Blazer" -ForegroundColor Magenta
+choco install tailblazer -y
 
 Update-SessionEnvironment
 
