@@ -146,8 +146,6 @@ Write-Host "    1Password" -ForegroundColor Magenta
 choco install 1password -y
 Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
-Write-Host "    Power BI Desktop" -ForegroundColor Magenta
-choco install powerbi -y
 Write-Host "    Snagit" -ForegroundColor Magenta
 choco install snagit -y
 Write-Host "    Camtasia" -ForegroundColor Magenta
@@ -181,7 +179,6 @@ $ApplicationList = "Microsoft.BingFinance",
 "Microsoft.WindowsPhone",
 "Microsoft.ZuneVideo",
 "Microsoft.MinecraftUWP",
-"Microsoft.MicrosoftPowerBIForWindows",
 "Microsoft.NetworkSpeedTest",
 "Microsoft.CommsPhone",
 "Microsoft.ConnectivityStore",
