@@ -41,7 +41,7 @@ Update-SessionEnvironment
 
 # Visual Studio
 Write-Host "Installing Visual Studio" -ForegroundColor Green
-choco install visualstudio2017professional -y #visualstudio2017enterprise or visualstudio2017community
+choco install visualstudio2017enterprise -y #visualstudio2017professional or visualstudio2017community
 
 #Choose your workloads. More information on workloads can be found at https://chocolatey.org/search?q=visualstudio2017-workload
 Write-Host "    Installing Azure" -ForegroundColor Magenta
