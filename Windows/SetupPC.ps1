@@ -32,7 +32,6 @@ Install-Module PSWindowsUpdate -Confirm:$false -Force | Out-Null
 Write-Host "Setting up Environment Variables" -ForegroundColor Green
 
 [Environment]::SetEnvironmentVariable('ChocolateyToolsLocation', ${env:ProgramFiles(x86)}, "User")
-[Environment]::SetEnvironmentVariable('Path', $Env:Path + ";${env:ProgramFiles}\SourceGear\Common\DiffMerge\", "User")
 Update-SessionEnvironment
   
 #####################################################################################################################################################################################################
