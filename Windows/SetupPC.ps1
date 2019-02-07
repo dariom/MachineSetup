@@ -126,8 +126,6 @@ Write-Host "    Paint.net" -ForegroundColor Magenta
 choco install paint.net -y
 Write-Host "    WinMerge" -ForegroundColor Magenta
 choco install winmerge  -y
-Write-Host "    Remote Desktop Manager" -ForegroundColor Magenta
-choco install rdcman -y
 Write-Host "    Steam" -ForegroundColor Magenta
 choco install steam -y
 Write-Host "    ReSharper" -ForegroundColor Magenta
