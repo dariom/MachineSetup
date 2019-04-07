@@ -69,32 +69,26 @@ Write-Host "    Installing PowerShell Extension" -ForegroundColor Magenta
 code --install-extension ms-vscode.PowerShell | Out-Null
 Write-Host "    Installing Chrome Debugger Extension" -ForegroundColor Magenta
 code --install-extension msjsdiag.debugger-for-chrome | Out-Null
-Write-Host "    Installing Angular Extension" -ForegroundColor Magenta
-code --install-extension johnpapa.Angular2 | Out-Null
-Write-Host "    Installing Docker Extension" -ForegroundColor Magenta
-code --install-extension PeterJausovec.vscode-docker | Out-Null
 Write-Host "    Installing Git Lens Extension" -ForegroundColor Magenta
 code --install-extension eamodio.gitlens | Out-Null
-Write-Host "    Installing Spell Checker Extension" -ForegroundColor Magenta
-code --install-extension streetsidesoftware.code-spell-checker | Out-Null
-Write-Host "    Installing VSTS Extension" -ForegroundColor Magenta
-code --install-extension ms-vsts.team | Out-Null
-Write-Host "    Installing SQL Extension" -ForegroundColor Magenta
-code --install-extension ms-mssql.mssql | Out-Null
-Write-Host "    Installing Azure Account Extension" -ForegroundColor Magenta
-code --install-extension ms-vscode.azure-account | Out-Null
-Write-Host "    Installing Docker Extension" -ForegroundColor Magenta
-code --install-extension PeterJausovec.vscode-docker | Out-Null
-Write-Host "    Installing Angular Template" -ForegroundColor Magenta
-code --install-extension Angular.ng-template | Out-Null
+Write-Host "    Installing Azure Tools for Visual Studio Code" -ForegroundColor Magenta
+code --install-extension ms-vscode.vscode-node-azure-pack | Out-Null
 Write-Host "    Installing Material Icon Theme" -ForegroundColor Magenta
 code --install-extension PKief.material-icon-theme | Out-Null
+Write-Host "    Installing Spell Checker Extension" -ForegroundColor Magenta
+code --install-extension streetsidesoftware.code-spell-checker | Out-Null
+Write-Host "    Installing Azure Repos Extension" -ForegroundColor Magenta
+code --install-extension ms-vsts.team | Out-Null
+Write-Host "    Installing Angular Extension" -ForegroundColor Magenta
+code --install-extension johnpapa.Angular2 | Out-Null
+Write-Host "    Installing Angular Template" -ForegroundColor Magenta
+code --install-extension Angular.ng-template | Out-Null
 Write-Host "    Installing TSLint Extension" -ForegroundColor Magenta
 code --install-extension ms-vscode.vscode-typescript-tslint-plugin | Out-Null
-Write-Host "    Installing Azure Resource Manager Tools" -ForegroundColor Magenta
-code --install-extension msazurermtools.azurerm-vscode-tools | Out-Null
-Write-Host "    Installing jebbs.plantuml" -ForegroundColor Magenta
-code --install-extension jebbs.plantuml | Out-Null
+Write-Host "    Installing Prettier Extension" -ForegroundColor Magenta
+code --install-extension esbenp.prettier-vscode | Out-Null
+Write-Host "    Installing VS Live Share Extension Pack Extension" -ForegroundColor Magenta
+code --install-extension MS-vsliveshare.vsliveshare-pack | Out-Null
 
 #Various Apps
 Write-Host "Installing Various Apps" -ForegroundColor Green
