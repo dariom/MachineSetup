@@ -90,7 +90,7 @@ code --install-extension Angular.ng-template | Out-Null
 Write-Host "    Installing Material Icon Theme" -ForegroundColor Magenta
 code --install-extension PKief.material-icon-theme | Out-Null
 Write-Host "    Installing TSLint Extension" -ForegroundColor Magenta
-code --install-extension eg2.tslint | Out-Null
+code --install-extension ms-vscode.vscode-typescript-tslint-plugin | Out-Null
 Write-Host "    Installing Azure Resource Manager Tools" -ForegroundColor Magenta
 code --install-extension msazurermtools.azurerm-vscode-tools | Out-Null
 Write-Host "    Installing jebbs.plantuml" -ForegroundColor Magenta
