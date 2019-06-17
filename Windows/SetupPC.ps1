@@ -140,6 +140,8 @@ Write-Host "    Tail Blazer" -ForegroundColor Magenta
 choco install tailblazer -y
 Write-Host "    Draw.io" -ForegroundColor Magenta
 choco install drawio -y
+Write-Host "    Screen To Gif" -ForegroundColor Magenta
+choco install screentogif -y
 
 Update-SessionEnvironment
 
