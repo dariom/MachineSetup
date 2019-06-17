@@ -44,7 +44,7 @@ choco install visualstudio2019enterprise -y #visualstudio2019professional or vis
 
 #Choose your workloads. More information on workloads can be found at https://chocolatey.org/search?q=visualstudio2019-workload
 Write-Host "    Installing Azure" -ForegroundColor Magenta
-# choco install visualstudio2019-workload-azure -y # Broken ATM - https://github.com/jberezanski/ChocolateyPackages/issues/35
+choco install visualstudio2019-workload-azure -y
 Write-Host "    Installing Data Storage & Processing" -ForegroundColor Magenta
 choco install visualstudio2019-workload-data -y
 Write-Host "    Installing .NET Desktop" -ForegroundColor Magenta
