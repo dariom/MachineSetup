@@ -132,8 +132,8 @@ choco install filezilla -y
 #choco install markdownpad2 -y # Not currently working
 Write-Host "    TeamViewer" -ForegroundColor Magenta
 choco install teamviewer -y
-Write-Host "    1Password" -ForegroundColor Magenta
-choco install 1password -y
+#Write-Host "    1Password" -ForegroundColor Magenta
+#choco install 1password -y# Not currently working
 Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
 Write-Host "    Snagit" -ForegroundColor Magenta
