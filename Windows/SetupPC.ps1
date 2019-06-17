@@ -128,8 +128,8 @@ Write-Host "    Fiddler" -ForegroundColor Magenta
 choco install fiddler -y
 Write-Host "    FileZilla" -ForegroundColor Magenta
 choco install filezilla -y
-Write-Host "    MarkdownPad2" -ForegroundColor Magenta
-choco install markdownpad2 -y
+#Write-Host "    MarkdownPad2" -ForegroundColor Magenta
+#choco install markdownpad2 -y # Not currently working
 Write-Host "    TeamViewer" -ForegroundColor Magenta
 choco install teamviewer -y
 Write-Host "    1Password" -ForegroundColor Magenta
