@@ -136,8 +136,6 @@ choco install teamviewer -y
 #choco install 1password -y# Not currently working
 Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
-Write-Host "    Camtasia" -ForegroundColor Magenta
-choco install camtasia -y
 Write-Host "    Tail Blazer" -ForegroundColor Magenta
 choco install tailblazer -y
 
