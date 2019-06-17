@@ -40,19 +40,19 @@ Update-SessionEnvironment
 
 # Visual Studio
 Write-Host "Installing Visual Studio" -ForegroundColor Green
-choco install visualstudio2017enterprise -y #visualstudio2017professional or visualstudio2017community
+choco install visualstudio2019enterprise -y #visualstudio2019professional or visualstudio2019community
 
-#Choose your workloads. More information on workloads can be found at https://chocolatey.org/search?q=visualstudio2017-workload
+#Choose your workloads. More information on workloads can be found at https://chocolatey.org/search?q=visualstudio2019-workload
 Write-Host "    Installing Azure" -ForegroundColor Magenta
-# choco install visualstudio2017-workload-azure -y # Broken ATM - https://github.com/jberezanski/ChocolateyPackages/issues/35
+# choco install visualstudio2019-workload-azure -y # Broken ATM - https://github.com/jberezanski/ChocolateyPackages/issues/35
 Write-Host "    Installing Data Storage & Processing" -ForegroundColor Magenta
-choco install visualstudio2017-workload-data -y
+choco install visualstudio2019-workload-data -y
 Write-Host "    Installing .NET Desktop" -ForegroundColor Magenta
-choco install visualstudio2017-workload-manageddesktop -y
+choco install visualstudio2019-workload-manageddesktop -y
 Write-Host "    Installing .NET Core" -ForegroundColor Magenta
-choco install visualstudio2017-workload-netcoretools -y
+choco install visualstudio2019-workload-netcoretools -y
 Write-Host "    Installing Web Development" -ForegroundColor Magenta
-choco install visualstudio2017-workload-netweb -y
+choco install visualstudio2019-workload-netweb -y
 
 #SQL Server Management Studio
 Write-Host "Install SQL Server Management Studio" -ForegroundColor Green
