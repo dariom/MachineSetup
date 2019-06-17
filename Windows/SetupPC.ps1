@@ -138,6 +138,8 @@ Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
 Write-Host "    Tail Blazer" -ForegroundColor Magenta
 choco install tailblazer -y
+Write-Host "    Draw.io" -ForegroundColor Magenta
+choco install drawio -y
 
 Update-SessionEnvironment
 
