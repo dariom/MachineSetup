@@ -53,7 +53,8 @@ Write-Host "    Installing .NET Core" -ForegroundColor Magenta
 choco install visualstudio2019-workload-netcoretools -y
 Write-Host "    Installing Web Development" -ForegroundColor Magenta
 choco install visualstudio2019-workload-netweb -y
-
+Write-Host "    Installing Office Development" -ForegroundColor Magenta
+choco install visualstudio2019-workload-office -y
 #SQL Server Management Studio
 Write-Host "Install SQL Server Management Studio" -ForegroundColor Green
 choco install sql-server-management-studio -y
