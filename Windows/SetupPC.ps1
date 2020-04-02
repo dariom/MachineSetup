@@ -38,6 +38,10 @@ Update-SessionEnvironment
 #                                                   INSTALLING APPLICATIONS
 #####################################################################################################################################################################################################
 
+# Office 365
+Write-Host "Installing Office 365 ProPlus" -ForegroundColor Green
+choco install office365proplus -y
+
 # Visual Studio
 Write-Host "Installing Visual Studio" -ForegroundColor Green
 choco install visualstudio2019enterprise -y #visualstudio2019professional or visualstudio2019community
@@ -55,13 +59,17 @@ Write-Host "    Installing Web Development" -ForegroundColor Magenta
 choco install visualstudio2019-workload-netweb -y
 Write-Host "    Installing Office Development" -ForegroundColor Magenta
 choco install visualstudio2019-workload-office -y
+Write-Host "    Installing Game development with Unity" -ForegroundColor Magenta
+choco install visualstudio2019-workload-managedgame -y
+Write-Host "    Installing Mobile Development" -ForegroundColor Magenta
+choco install visualstudio2019-workload-xamarinbuildtools -y
 #SQL Server Management Studio
 Write-Host "Install SQL Server Management Studio" -ForegroundColor Green
 choco install sql-server-management-studio -y
 
 # Visual Studio Code
 Write-Host "Installing Visual Studio Code" -ForegroundColor Green
-choco install vscode -y --params '"/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders"'
+choco install vscode -y --params '"/NoDesktopIcon"'
 Update-SessionEnvironment
 
 Write-Host "    Installing C# Extension" -ForegroundColor Magenta
@@ -80,16 +88,24 @@ Write-Host "    Installing Spell Checker Extension" -ForegroundColor Magenta
 code --install-extension streetsidesoftware.code-spell-checker | Out-Null
 Write-Host "    Installing Azure Repos Extension" -ForegroundColor Magenta
 code --install-extension ms-vsts.team | Out-Null
-Write-Host "    Installing Angular Extension" -ForegroundColor Magenta
-code --install-extension johnpapa.Angular2 | Out-Null
-Write-Host "    Installing Angular Template" -ForegroundColor Magenta
-code --install-extension Angular.ng-template | Out-Null
+# Write-Host "    Installing Angular Extension" -ForegroundColor Magenta
+# code --install-extension johnpapa.Angular2 | Out-Null
+# Write-Host "    Installing Angular Template" -ForegroundColor Magenta
+# code --install-extension Angular.ng-template | Out-Null
 Write-Host "    Installing TSLint Extension" -ForegroundColor Magenta
 code --install-extension ms-vscode.vscode-typescript-tslint-plugin | Out-Null
 Write-Host "    Installing Prettier Extension" -ForegroundColor Magenta
 code --install-extension esbenp.prettier-vscode | Out-Null
 Write-Host "    Installing VS Live Share Extension Pack Extension" -ForegroundColor Magenta
 code --install-extension MS-vsliveshare.vsliveshare-pack | Out-Null
+Write-Host "    Installing ARM Template Viewer" -ForegroundColor Magenta
+code --install-extension bencoleman.armview | Out-Null
+Write-Host "    Installing Code Spell Checker" -ForegroundColor Magenta
+code --install-extension streetsidesoftware.code-spell-checker | Out-Null
+Write-Host "    Installing Docker" -ForegroundColor Magenta
+code --install-extension ms-azuretools.vscode-docker | Out-Null
+Write-Host "    Installing XML Tools" -ForegroundColor Magenta
+code --install-extension dotjoshjohnson.xml | Out-Null
 
 #Various Apps
 Write-Host "Installing Various Apps" -ForegroundColor Green
@@ -102,6 +118,8 @@ Write-Host "    Adobe Acrobat Reader" -ForegroundColor Magenta
 choco install adobereader -y
 Write-Host "    Node.js" -ForegroundColor Magenta
 choco install nodejs.install -y
+Write-Host "    Microsoft Edge" -ForegroundColor Magenta
+choco install microsoft-edge -y
 Write-Host "    Google Chrome" -ForegroundColor Magenta
 choco install googlechrome -y
 Write-Host "    Sysinternals" -ForegroundColor Magenta
@@ -112,8 +130,8 @@ Write-Host "    7-Zip" -ForegroundColor Magenta
 choco install 7zip.install -y
 Write-Host "    VLC" -ForegroundColor Magenta
 choco install vlc -y
-Write-Host "    Cmder" -ForegroundColor Magenta
-choco install cmder -y 
+# Write-Host "    Cmder" -ForegroundColor Magenta
+# choco install cmder -y 
 Write-Host "    Paint.net" -ForegroundColor Magenta
 choco install paint.net -y
 Write-Host "    WinMerge" -ForegroundColor Magenta
@@ -128,12 +146,12 @@ Write-Host "    Fiddler" -ForegroundColor Magenta
 choco install fiddler -y
 Write-Host "    FileZilla" -ForegroundColor Magenta
 choco install filezilla -y
-#Write-Host "    MarkdownPad2" -ForegroundColor Magenta
-#choco install markdownpad2 -y # Not currently working
+# Write-Host "    MarkdownPad2" -ForegroundColor Magenta
+# choco install markdownpad2 -y # Not currently working
 Write-Host "    TeamViewer" -ForegroundColor Magenta
 choco install teamviewer -y
-#Write-Host "    1Password" -ForegroundColor Magenta
-#choco install 1password -y# Not currently working
+Write-Host "    1Password" -ForegroundColor Magenta
+choco install 1password -y
 Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
 Write-Host "    Tail Blazer" -ForegroundColor Magenta
@@ -142,7 +160,10 @@ Write-Host "    Draw.io" -ForegroundColor Magenta
 choco install drawio -y
 Write-Host "    Screen To Gif" -ForegroundColor Magenta
 choco install screentogif -y
-
+Write-Host "    Windows Terminal" -ForegroundColor Magenta
+choco install microsoft-windows-terminal -y
+Write-Host "    Cascadia Mono Font" -ForegroundColor Magenta
+choco install cascadiamono -y
 Update-SessionEnvironment
 
 #####################################################################################################################################################################################################
@@ -158,14 +179,12 @@ $ApplicationList = "Microsoft.BingFinance",
 "Microsoft.Getstarted",
 "Microsoft.MSPaint",
 "Microsoft.WindowsSoundRecorder",
-"Microsoft.Microsoft3DViewer",
 "Microsoft.MicrosoftOfficeHub",
 "Microsoft.MicrosoftSolitaireCollection",
 "Microsoft.MicrosoftStickyNotes"        ,
 "Microsoft.WindowsFeedbackHub",
 "Microsoft.OneConnect",
 "Microsoft.SkypeApp",
-"Microsoft.WindowsCamera",
 "Microsoft.WindowsPhone",
 "Microsoft.ZuneVideo",
 "Microsoft.MinecraftUWP",
@@ -212,7 +231,6 @@ $ApplicationList = "Microsoft.BingFinance",
 "BethesdaSoftworks.FalloutShelter",
 "PandoraMediaInc.29680B314EFC2",
 "AdobeSystemIncorporated.AdobePhotoshop",
-"Microsoft.Print3D",
 "Microsoft.GetHelp",
 "king.com.BubbleWitch3Saga"
 
