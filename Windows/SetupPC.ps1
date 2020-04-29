@@ -257,6 +257,15 @@ New-Item (Join-Path -Path $env:UserProfile -ChildPath "\.gitconfig") -Type File 
 New-Item (Join-Path -Path $env:UserProfile -ChildPath "\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/PowerShell/Microsoft.PowerShell_profile.ps1')) -Force | Out-Null
 New-Item (Join-Path -Path $env:UserProfile -ChildPath "\Documents\PowerShell\Microsoft.PowerShell_profile.ps1") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/PowerShell/Microsoft.PowerShell_profile.ps1')) -Force | Out-Null
 
+# Windows Terminal config, logos, icons
+New-Item (Join-Path -Path $env:LocalAppData -ChildPath "\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\icons") -Type Directory -Force | Out-Null
+$files = @("settings.json", "azure.png", "cmd.png", "ps.png", "pscore.png", "icons\azure.png", "icons\cmd.png", "icons\ps.png", "icons\pscore.png")
+foreach ($file in $files) {
+    $url = $file -replace "icons\\", "icons/"
+    New-Item (Join-Path -Path $env:LocalAppData -ChildPath "\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\$file") -Type File -Value ((New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/dariom/MachineSetup/master/Windows/Configs/WindowsTerminal/$url")) -Force | Out-Null
+}
+
+
 #####################################################################################################################################################################################################
 #                                                   WINDOWS PREFERENCES
 #####################################################################################################################################################################################################
