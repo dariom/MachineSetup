@@ -130,8 +130,6 @@ Write-Host "    7-Zip" -ForegroundColor Magenta
 choco install 7zip.install -y
 Write-Host "    VLC" -ForegroundColor Magenta
 choco install vlc -y
-# Write-Host "    Cmder" -ForegroundColor Magenta
-# choco install cmder -y 
 Write-Host "    Paint.net" -ForegroundColor Magenta
 choco install paint.net -y
 Write-Host "    WinMerge" -ForegroundColor Magenta
@@ -144,14 +142,14 @@ Write-Host "    DotPeek" -ForegroundColor Magenta
 choco install dotpeek -y
 Write-Host "    Fiddler" -ForegroundColor Magenta
 choco install fiddler -y
-Write-Host "    FileZilla" -ForegroundColor Magenta
-choco install filezilla -y
+# Write-Host "    FileZilla" -ForegroundColor Magenta
+# choco install filezilla -y # No longer needed everywhere
 # Write-Host "    MarkdownPad2" -ForegroundColor Magenta
 # choco install markdownpad2 -y # Not currently working
 Write-Host "    TeamViewer" -ForegroundColor Magenta
 choco install teamviewer -y
-Write-Host "    1Password" -ForegroundColor Magenta
-choco install 1password -y
+# Write-Host "    1Password" -ForegroundColor Magenta
+# choco install 1password -y # Not currently working
 Write-Host "    LinqPad" -ForegroundColor Magenta
 choco install linqpad -y
 Write-Host "    Tail Blazer" -ForegroundColor Magenta
@@ -164,6 +162,8 @@ Write-Host "    Windows Terminal" -ForegroundColor Magenta
 choco install microsoft-windows-terminal -y
 Write-Host "    Cascadia Mono Font" -ForegroundColor Magenta
 choco install cascadiamono -y
+Write-Host "    YouTube Downloader" -ForegroundColor Magenta
+choco install youtube-dl -y
 Update-SessionEnvironment
 
 #####################################################################################################################################################################################################
@@ -204,7 +204,6 @@ $ApplicationList = "Microsoft.BingFinance",
 "ShazamEntertainmentLtd.Shazam",
 "king.com.CandyCrushSaga",
 "king.com.CandyCrushSodaSaga",
-"king.com.*",
 "ClearChannelRadioDigital.iHeartRadio",
 "6Wunderkinder.Wunderlist",
 "Drawboard.DrawboardPDF",
