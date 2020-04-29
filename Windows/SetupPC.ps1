@@ -158,8 +158,8 @@ Write-Host "    Screen To Gif" -ForegroundColor Magenta
 choco install screentogif -y
 Write-Host "    Windows Terminal" -ForegroundColor Magenta
 choco install microsoft-windows-terminal -y
-Write-Host "    Cascadia Mono Font" -ForegroundColor Magenta
-choco install cascadiamono -y
+Write-Host "    Cascadia Powerline Font" -ForegroundColor Magenta
+choco install cascadiacodepl -y
 Write-Host "    YouTube Downloader" -ForegroundColor Magenta
 choco install youtube-dl -y
 Update-SessionEnvironment
