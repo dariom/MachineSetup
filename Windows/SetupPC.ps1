@@ -46,26 +46,26 @@ Update-SessionEnvironment
 Write-Host "Installing Visual Studio" -ForegroundColor Green
 choco install visualstudio2019enterprise -y #visualstudio2019professional or visualstudio2019community
 
-#Choose your workloads. More information on workloads can be found at https://chocolatey.org/search?q=visualstudio2019-workload
-Write-Host "    Installing Azure" -ForegroundColor Magenta
-choco install visualstudio2019-workload-azure -y
-Write-Host "    Installing Data Storage & Processing" -ForegroundColor Magenta
-choco install visualstudio2019-workload-data -y
-Write-Host "    Installing .NET Desktop" -ForegroundColor Magenta
-choco install visualstudio2019-workload-manageddesktop -y
-Write-Host "    Installing .NET Core" -ForegroundColor Magenta
-choco install visualstudio2019-workload-netcoretools -y
-Write-Host "    Installing Web Development" -ForegroundColor Magenta
-choco install visualstudio2019-workload-netweb -y
-Write-Host "    Installing Office Development" -ForegroundColor Magenta
-choco install visualstudio2019-workload-office -y
-Write-Host "    Installing Game development with Unity" -ForegroundColor Magenta
-choco install visualstudio2019-workload-managedgame -y
-Write-Host "    Installing Mobile Development" -ForegroundColor Magenta
-choco install visualstudio2019-workload-xamarinbuildtools -y
-#SQL Server Management Studio
-Write-Host "Install SQL Server Management Studio" -ForegroundColor Green
-choco install sql-server-management-studio -y
+# #Choose your workloads. More information on workloads can be found at https://chocolatey.org/search?q=visualstudio2019-workload
+# Write-Host "    Installing Azure" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-azure -y
+# Write-Host "    Installing Data Storage & Processing" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-data -y
+# Write-Host "    Installing .NET Desktop" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-manageddesktop -y
+# Write-Host "    Installing .NET Core" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-netcoretools -y
+# Write-Host "    Installing Web Development" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-netweb -y
+# Write-Host "    Installing Office Development" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-office -y
+# Write-Host "    Installing Game development with Unity" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-managedgame -y
+# Write-Host "    Installing Mobile Development" -ForegroundColor Magenta
+# choco install visualstudio2019-workload-xamarinbuildtools -y
+# #SQL Server Management Studio
+# Write-Host "Install SQL Server Management Studio" -ForegroundColor Green
+# choco install sql-server-management-studio -y
 
 # Visual Studio Code
 Write-Host "Installing Visual Studio Code" -ForegroundColor Green
