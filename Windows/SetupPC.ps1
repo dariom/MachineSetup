@@ -162,6 +162,8 @@ Write-Host "    Cascadia Powerline Font" -ForegroundColor Magenta
 choco install cascadiacodepl -y
 Write-Host "    YouTube Downloader" -ForegroundColor Magenta
 choco install youtube-dl -y
+Write-Host "    PowerShell Core" -ForegroundColor Magenta
+choco install powershell-core -y
 Update-SessionEnvironment
 
 #####################################################################################################################################################################################################
