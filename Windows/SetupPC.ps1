@@ -38,9 +38,9 @@ Update-SessionEnvironment
 #                                                   INSTALLING APPLICATIONS
 #####################################################################################################################################################################################################
 
-# Office 365
-Write-Host "Installing Office 365 ProPlus" -ForegroundColor Green
-choco install office365proplus -y
+# # Office 365
+# Write-Host "Installing Office 365 ProPlus" -ForegroundColor Green
+# choco install office365proplus -y
 
 # Visual Studio
 Write-Host "Installing Visual Studio" -ForegroundColor Green
