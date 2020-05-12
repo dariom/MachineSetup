@@ -106,6 +106,8 @@ Write-Host "    Installing Docker" -ForegroundColor Magenta
 code --install-extension ms-azuretools.vscode-docker | Out-Null
 Write-Host "    Installing XML Tools" -ForegroundColor Magenta
 code --install-extension dotjoshjohnson.xml | Out-Null
+Write-Host "    Installing Draw.io" -ForegroundColor Magenta
+code --install-extension hediet.vscode-drawio | Out-Null
 
 #Various Apps
 Write-Host "Installing Various Apps" -ForegroundColor Green
