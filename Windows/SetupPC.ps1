@@ -477,10 +477,6 @@ If (-Not (Test-Path "C:\Code")) {
 ####################################################################################################################################################################################################
 #                                                   CUSTOMISE CMDER AND POSH-GIT
 #####################################################################################################################################################################################################
-# See https://gist.github.com/dariom/23a08dfb856bc836bc0281319d74cc76
-git clone https://github.com/powerline/fonts.git C:\Code\github\fonts
-C:\Code\github\fonts\install.ps1
-
 Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 Install-Module -Name 'posh-git'
