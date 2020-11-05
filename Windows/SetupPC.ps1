@@ -86,8 +86,6 @@ Write-Host "    Installing Material Icon Theme" -ForegroundColor Magenta
 code --install-extension PKief.material-icon-theme | Out-Null
 Write-Host "    Installing Spell Checker Extension" -ForegroundColor Magenta
 code --install-extension streetsidesoftware.code-spell-checker | Out-Null
-Write-Host "    Installing Azure Repos Extension" -ForegroundColor Magenta
-code --install-extension ms-vsts.team | Out-Null
 # Write-Host "    Installing Angular Extension" -ForegroundColor Magenta
 # code --install-extension johnpapa.Angular2 | Out-Null
 # Write-Host "    Installing Angular Template" -ForegroundColor Magenta
